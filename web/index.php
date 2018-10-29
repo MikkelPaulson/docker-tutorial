@@ -20,7 +20,7 @@ switch ($_SERVER['REQUEST_URI']) {
         if (class_exists('Redis')) {
             try {
                 $redis = new Redis();
-                @$redis->connect('demo-redis', 6379);
+                @$redis->connect('tutorial-redis', 6379);
                 $num_times = $redis->incr('num_times') ?: 0;
 
                 $content[] = "<p>This page has been loaded $num_times times.</p>";
