@@ -28,7 +28,7 @@ switch ($_SERVER['REQUEST_URI']) {
                 $content[] = "<p>I'd tell you how many times this page has been loaded, but I can't connect to <strong>tutorial-redis</strong>!</p>";
             }
         } else {
-            $content[] = "<p>I'd tell you how many times this page has been loaded, but I don't have Redis installed!</p>";
+            $content[] = "<p>I'd tell you how many times this page has been loaded, but PHP doesn't have the Redis extension installed!</p>";
         }
 
         $content[] = '<img src="/dank.gif" style="max-width: 200px; max-height: 200px;" alt="The dankest of gifs">';
