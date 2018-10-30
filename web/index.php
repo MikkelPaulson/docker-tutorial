@@ -25,7 +25,7 @@ switch ($_SERVER['REQUEST_URI']) {
 
                 $content[] = "<p>This page has been loaded $num_times times.</p>";
             } catch (Exception $e) {
-                $content[] = "<p>I'd tell you how many times this page has been loaded, but I can't connect to Redis!</p>";
+                $content[] = "<p>I'd tell you how many times this page has been loaded, but I can't connect to <strong>tutorial-redis</strong>!</p>";
             }
         } else {
             $content[] = "<p>I'd tell you how many times this page has been loaded, but I don't have Redis installed!</p>";

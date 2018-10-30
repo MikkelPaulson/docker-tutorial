@@ -1,0 +1,10 @@
+version: "3.3"
+
+services:
+
+  tutorial-php:
+    build:
+      context: .
+    image: tutorial-php:latest
+    ports:
+      - 8000:80
