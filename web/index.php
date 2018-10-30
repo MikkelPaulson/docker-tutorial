@@ -31,7 +31,7 @@ switch ($_SERVER['REQUEST_URI']) {
             $content[] = "<p>I'd tell you how many times this page has been loaded, but PHP doesn't have the Redis extension installed!</p>";
         }
 
-        $content[] = '<img src="/dank.gif" style="max-width: 200px; max-height: 200px;" alt="The dankest of gifs">';
+        $content[] = '<img src="/dank.gif" style="max-width: 300pt; max-height: 300pt;" alt="The dankest of gifs">';
 
         $content = implode("\n", $content);
 
@@ -50,8 +50,10 @@ HTML;
         break;
     case '/dank.gif':
         // signal to parent process to output requested file verbatim
-        if (is_file('dank.gif')) {
-            return false;
+        if (is_file('/web/dank.gif')) {
+            header('Content-type: image/gif');
+            readfile('/web/dank.gif');
+            die();
         }
         // otherwise, fall through
     default:
